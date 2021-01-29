@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Roboto+Mono:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="./fontawesome/css/all.css"> -->
+  <script src="https://use.fontawesome.com/469b3ca765.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <title>Ajesh Mishra</title>
+</head>
+<body>
+  <div class="content">
+
+  <span class="left-panel large">
+    <div class="header">
+      <h2>
+        <i class="fa fa-home"></i>&nbsp;
+        ajesh-mishra.github.io
+      </h2>
+      <div class="search">
+        <input type="text" placeholder="Search this site">
+      </div>
+    </div>
+    
+    <p class="youtube">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/sugvnHA7ElY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </p>
+
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <h2>Linux Kernel 5.8 is out!</h2>
+          <p>Linus Travolts announsed that the new version of Linux Kernel with it's biggest update is out.</p>
+        </div>
+        <div class="swiper-slide">
+          <h2>Python's new version 3.8 is here!</h2>
+          <p></p>
+          <p></p>
+        </div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+        <div class="swiper-slide">Slide 10</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </span>
+
+  <div class="article">
+    
+    <div class="section">
+      <div class="header small">
+        <h2>
+          <i class="fa fa-home"></i>&nbsp;         
+          <span class="site-name medium">ajesh-mishra.github.io</span>
+        </h2>
+        <div class="search">
+          <input type="text" placeholder="Search this site">
+        </div>
+      </div>
+      
+      <div class="site-path">
+        <a href="#" target="_blank" class="no-color site-path">home</a> /
+        <a href="#" target="_blank" class="no-color site-path">codingparadigm</a> /
+        <a href="#" target="_blank" class="no-color site-path">python</a>
+      </div>
+    
+      <h1>Python's special __name__ variable</h1>
+      <div class="author">
+        <img src="ajesh.jpg" class="author-img" alt="author" width="50" height="50">
+        <div class="author-details">
+          <div class="author-name">
+            <a href="#" target="_blank" class="no-color">Ajesh Mishra</a>
+          </div>
+          <small class="author-tag">
+            <i class="fa fa-calendar"></i> &nbsp;26th July, 2020 &nbsp; | &nbsp;
+            <i class="fa fa-clock-o"></i> &nbsp;5 mins read
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <p class="youtube small">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/sugvnHA7ElY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </p>
+
+    <div class="section">
+      <p>Have you ever come across the below Python code and wondered what it was.
+        Let's try to demistify it!
+      </p>
+      <pre><code class="language-python">if __name__ == '__main__':</code></pre>
+    </div>
+
+    <div class="section">
+      <h2>What is __name__?</h2>
+      <p>Python has many special variables which starts and ends with two underscores '_' and they are used internally to keep track of things. 
+        <span class="code">__name__</span> is one of the special variables and Python uses it to store the name of the module.
+      </p>
+      <p>Let's inspect what's in the special variable <span class="code">__name__</span>: test.py</p>
+      <pre><code class="language-python">print(f'__name__ is {__name__}')</code></pre>
+      <p>Output:</p>
+      <pre><code class="language-shell">$ python3 test.py
+__name__ is __main__</code></pre>
+      <p>So, <span class="code">__name__</span> has the string <span class="code">__main__</span>.</p>
+      <p>The conclusion is: Python has give a special name to the module which is <span class="code">__main__</span>.</p>
+      <p>That's cool ! How about we import the module <span class="italic">test.py</span> into our Python REPL and check the output.</p>
+      <pre><code class="language-shell">>>> import test.py
+__name__ is test</code></pre>
+      <p>So, this means <span class="code">__name__</span> contains the string test and the module name is test
+      This is because in Python every <span class="code">.py</span> file is a module and in our example test is the module name.
+      </p>
+    </div>
+
+    <div class="section note">
+      <div class="note-icon">
+        <i class="fa fa-sticky-note-o"></i>
+      </div>
+      
+      <p class="text">
+        There are various other special variables that Python has. 
+        <a href="#">Check them out!</a>
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Use Case</h2>
+      <p>Since Python makes use of <span class="code">__name__</span> to store the module name, 
+        developers exploite this to test there functions in the module by directly calling the functions benith the conditional
+        <span class="code">if __name__ == __main__</span>.
+      </p>
+      <p>Consider the following code: <span class="italic">test.py</span></p>
+      <pre><code class="language-python">def show():
+  print('Hello World!')
+
+if __name__ == '__main__':
+  show()</code></pre>
+      <p>Output:</p>
+      <pre><code class="language-shell">$ python3 test.py
+Hello World!</code></pre>
+      <p>But, if we were to import the module test into another python file then the function won't get executed.</p>
+    </div>
+
+    <div class="section note">
+      <div class="note-icon">
+        <i class="fa fa-comments-o"></i>
+      </div>
+      <p>
+        Hope you liked the article and that it was helpful, please give us a thumps up. 
+        &nbsp;<a href="#">Like <i class="fa fa-thumbs-o-up"></i></a>
+        <!-- &nbsp;<a href="#">Dislike <i class="far fa-thumbs-down"></i></a> -->
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Related Articles</h2>&nbsp;
+      <a href="#" target="_blank" class="no-color">
+        <i class="fa fa-angle-right"></i>
+        &nbsp;Special Variables in Python
+      </a><br>&nbsp;
+      <a href="#" target="_blank" class="no-color">
+        <i class="fa fa-angle-right"></i>
+        &nbsp;Special functions in Python
+      </a><br>&nbsp;
+    </div>
+
+    <!-- <div class="footer">
+      <h2>ajesh-mishra.github.io</h2>
+      <p>Hi There, my name is Ajesh and I am a software developer.</p>
+    </div> -->
+
+    <div class="swiper-container small">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <h2>Linux Kernel 5.8 is out!</h2>
+          <p>Linus Travolts announsed that the new version of Linux Kernel with it's biggest update is out.</p>
+        </div>
+        <div class="swiper-slide">
+          <h2>Python's new version 3.8 is here!</h2>
+          <p></p>
+          <p></p>
+        </div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+        <div class="swiper-slide">Slide 10</div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="bottom">
+      <div>
+        <a href="https://github.com/ajesh-mishra" target="_blank" class="no-color">
+          <i class="fa fa-github"></i>
+        </a>&nbsp;&nbsp;
+        <a href="https://ajesh-mishra.github.io" target="_blank" class="no-color">
+          <i class="fa fa-twitter"></i>
+        </a>&nbsp;&nbsp;
+        <a href="https://www.linkedin.com/in/ajesh-mishra-81b94687" target="_blank" class="no-color">
+          <i class="fa fa-linkedin"></i>
+        </a>&nbsp;&nbsp;
+        <a href="https://ajesh-mishra.github.io" target="_blank" class="no-color">
+          <i class="fa fa-youtube-play"></i>
+        </a>&nbsp;&nbsp;
+        <a href="https://ajesh-mishra.github.io" target="_blank" class="no-color">
+          <i class="fa fa-facebook-square"></i>
+        </a>&nbsp;&nbsp;
+      </div>
+      <a href="https://ajesh-mishra.github.io" target="_blank" class="no-color">ajesh-mishra.github.io</a>
+    </div>
+
+  </div>
+
+  <div class="right-panel large">    
+    <a href="https://github.com/ajesh-mishra" target="_blank" class="no-color">
+      <i class="fa fa-share-alt"></i>
+    </a>&nbsp;&nbsp;
+    <a href="https://github.com/ajesh-mishra" target="_blank" class="no-color">
+      <i class="fa fa-share"></i>
+    </a>&nbsp;&nbsp;
+    <!-- <a href="https://github.com/ajesh-mishra" target="_blank" class="no-color">
+      <i class="fa fa-code-fork"></i>
+    </a>&nbsp;&nbsp; -->
+    <a href="https://github.com/ajesh-mishra" target="_blank" class="no-color">
+      <i class="fa fa-cloud-download"></i>
+    </a>&nbsp;&nbsp;
+    <a href="https://www.linkedin.com/in/ajesh-mishra-81b94687" target="_blank" class="no-color">
+      <i class="fa fa-linkedin"></i>
+    </a>&nbsp;&nbsp;
+    <a href="https://ajesh-mishra.github.io" target="_blank" class="no-color">
+      <i class="fa fa-youtube-play"></i>
+    </a>&nbsp;&nbsp;
+  </div>
+
+  </div>
+
+  <script src="prism.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 30,
+      mousewheel: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+</script>
+</body>
+</html>
